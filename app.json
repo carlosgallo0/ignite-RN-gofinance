@@ -1,0 +1,12 @@
+{
+  "name": "ignite-RN-gofinance",
+  "displayName": "ignite-RN-gofinance",
+  "expo": {
+    "name": "ignite-RN-gofinance",
+    "slug": "ignite-RN-gofinance",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
