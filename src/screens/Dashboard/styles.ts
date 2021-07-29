@@ -10,6 +10,7 @@ export const Container = styled.View`
    
     /* background-color:${(props) => props.theme.colors.secondary_light} */
     background-color:${({theme}) => theme.colors.background};
+
 `;
 
 export const Header = styled.View`
@@ -85,4 +86,13 @@ export const Title = styled.Text`
   font-size: ${RFValue(18)}px;
   font-family: ${({ theme }) => theme.fonts.regular};
   margin-bottom: 16px;
+`;
+
+export const TransactionList = styled.FlatList.attrs({
+  showsVerticalScrollIndicator:  false,
+  contentContainerStyle:{
+      paddingBottom: getBottomSpace() 
+  }
+})` 
+
 `;

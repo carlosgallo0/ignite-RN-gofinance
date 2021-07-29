@@ -1,11 +1,49 @@
 import React from 'react';
+import { getBottomSpace } from 'react-native-iphone-x-helper';
 import { HighlightCard } from '../../components/HighlightCard';
 import { TransactionCard } from '../../components/TransactionCard';
 
-import { Container, Header, UserInfo, User, Photo, UserGreeting, UserName, LogoutButton, Icon, UserWrapper, HighlightCards, Transactions, Title} from './styles';
+import { Container, Header, UserInfo, User, Photo, UserGreeting, UserName, LogoutButton, Icon, UserWrapper, HighlightCards, Transactions, Title, TransactionList} from './styles';
 
 
 export function Dashboard(){
+
+    const data = [
+    {
+        id: '1',
+        type: "positive",
+        title: "Desenvolvimento de site",
+        amount: "R$ 12.000,00",
+        category: {
+         name: "Vendas",
+         icon: "dollar-sign"
+        },
+        date: "13/04/2021"
+    },
+    {
+        id:'2',
+        type: "negative",
+        title: "Pizzaria",
+        amount: "R$ 35,00",
+        category: {
+            name: "Vendas",
+            icon: "coffee"
+        },
+        date: "10/04/2021"
+    },
+    {
+        id: '3',
+        type: "negative",
+        title: "Aluguel do apartamento",
+        amount: "R$ 1.200,00",
+        category: {
+            name: "compras",
+            icon: "shopping-bag"
+        },
+        date: "03/04/2021"
+    }
+];
+
     return(
         <Container>
             <Header>
@@ -29,8 +67,10 @@ export function Dashboard(){
             </HighlightCards>
             <Transactions>
                 <Title>Listagem</Title>
-                <TransactionCard>
-                </TransactionCard>
+                <TransactionList
+                    data={data}
+                    renderItem= {({item}) => <TransactionCard data={item}/>}
+                />
             </Transactions>
         </Container>
     )
