@@ -1,14 +1,16 @@
 import React from 'react';
 import { getBottomSpace } from 'react-native-iphone-x-helper';
 import { HighlightCard } from '../../components/HighlightCard';
-import { TransactionCard } from '../../components/TransactionCard';
+import { TransactionCard, TransactionCardProps } from '../../components/TransactionCard';
 
 import { Container, Header, UserInfo, User, Photo, UserGreeting, UserName, LogoutButton, Icon, UserWrapper, HighlightCards, Transactions, Title, TransactionList} from './styles';
 
+export interface DataListProps extends TransactionCardProps {
+    id: string;
+}
 
 export function Dashboard(){
-
-    const data = [
+    const data: DataListProps[] = [
     {
         id: '1',
         type: "positive",
@@ -69,6 +71,7 @@ export function Dashboard(){
                 <Title>Listagem</Title>
                 <TransactionList
                     data={data}
+                    keyExtractor= {item => item.id}
                     renderItem= {({item}) => <TransactionCard data={item}/>}
                 />
             </Transactions>
