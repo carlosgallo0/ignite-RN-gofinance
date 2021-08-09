@@ -36,6 +36,12 @@ justify-content: space-between;
 `;
 
 export const TransactionTypes = styled.View`  
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-top: 8px;
+    margin-bottom: 8px;
+
 
 `;
 export const Fields = styled.View`  
